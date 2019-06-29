@@ -137,7 +137,7 @@ server.get('/z',(req,res)=>{
 // })
 
 function requestDarksky(lat,lng,units='us') {
-	let url = `https://api.darksky.net/forecast/${process.env.darkSkykey}/${lat},${lng}?units=${units}`;
+	let url = `https://api.darksky.net/forecast/${process.env.darkskykey}/${lat},${lng}?units=${units}`;
 	let pro = nfetch(url,{'method':'GET'});
 	return pro;
 }
