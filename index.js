@@ -1,14 +1,16 @@
-let createApplication = require('./node_modules/express');
+const createApplication = require('./node_modules/express');
 
-let server = createApplication();
-let nfetch = require('./node_modules/node-fetch');
-let dbCon = require('nedb');
-let db = new dbCon('weather3.db');
+const server = createApplication();
+const nfetch = require('./node_modules/node-fetch');
+const dbCon = require('nedb');
+const db = new dbCon('weather3.db');
+require('dotenv').config();
+
 db.loadDatabase();
 // console.log(server);
 let pubMiddle = createApplication.static('./pub2');
 // let jsonMiddle = createApplication.json({'limit':'2mb'});
-// console.log('port ',process.env);
+console.log('env ',process.env);
 server.use(pubMiddle);
 // server.use(jsonMiddle);
 
@@ -135,7 +137,7 @@ server.get('/z',(req,res)=>{
 // })
 
 function requestDarksky(lat,lng,units='us') {
-	let url = `https://api.darksky.net/forecast/d2076a5cd811aebe421700a792c513de/${lat},${lng}?units=${units}`;
+	let url = `https://api.darksky.net/forecast/${process.env.darkSkykey}/${lat},${lng}?units=${units}`;
 	let pro = nfetch(url,{'method':'GET'});
 	return pro;
 }
