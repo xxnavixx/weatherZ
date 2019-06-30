@@ -16,8 +16,8 @@ go();
 
 async function go() {
 	let loc = await myLocation();
-	myLat = lat = loc.coords.latitude;
-	myLng = lng = loc.coords.longitude;
+	let lat = myLat = loc.coords.latitude;
+	let lng = myLng = loc.coords.longitude;
 	console.log(`current location lat:${lat}, long${lng}`);
 	// loc.coords.latitude
 	let rsp = await requestWeather(lat,lng);
