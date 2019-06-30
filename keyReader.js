@@ -10,7 +10,7 @@ function KeyReader (filename,showLog=false) {
 
 KeyReader.prototype.getKey = function(keyname) {
 	let pro,res,rej;
-	keyname2 = keyname + '=';
+	let keyname2 = keyname + '=';
 	pro = new Promise((a,b)=>{res=a;rej=b});
 	
 	fs.readFile(this._filename,{'encoding':'utf-8'},(err,data)=>{

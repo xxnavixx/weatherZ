@@ -3,7 +3,7 @@ const server = getExpress();
 let pubMiddleware  = getExpress.static('./pub2');
 const nfetch = require('node-fetch');
 const dbConstructor = require('nedb');
-db = new dbConstructor('weather3.db');
+const db = new dbConstructor('weather3.db');
 db.loadDatabase();
 // console.log('db',db);
 server.use(pubMiddleware);
@@ -94,7 +94,7 @@ function getDarkskyKey() {
 	let keyname = 'darkskyKey';
 	let keyValue = process.env.darkskyKey;
 	
-	let keyPro;
+	let keyPro,res,rej;
 	if(keyValue) {
 		console.log('process.env.darkskyKey : ',keyValue);
 		keyPro = new Promise((a,b)=>{res=a;rej=b;});
