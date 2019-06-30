@@ -8,3 +8,5 @@ weather2.db
 test0629.js
 pub
 .env
+key.env
+tester.js

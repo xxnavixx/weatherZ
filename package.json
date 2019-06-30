@@ -5,7 +5,7 @@
   "main": "go.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node go3.js"
+	"start": "node go4.js"
   },
   "keywords": [
     "express",
