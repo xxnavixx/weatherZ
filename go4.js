@@ -101,7 +101,7 @@ function getDarkskyKey() {
 		keyPro.res(keyValue);
 		
 	} else {
-		let keyReaderConstructor = require('./keyreader.js');
+		let keyReaderConstructor = require('./keyReader.js');
 		let kr = new keyReaderConstructor(filename);
 		
 		keyPro = kr.getKey(keyname);
