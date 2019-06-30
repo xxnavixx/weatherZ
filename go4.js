@@ -98,9 +98,10 @@ function getDarkskyKey() {
 	if(keyValue) {
 		console.log('process.env.darkskyKey : ',keyValue);
 		keyPro = new Promise((a,b)=>{res=a;rej=b;});
-		keyPro.res(keyValue);
+		res(keyValue);
 		
 	} else {
+		rej(new Error('no enviroment key value'));
 		let keyReaderConstructor = require('./keyReader.js');
 		let kr = new keyReaderConstructor(filename);
 		
